@@ -8,7 +8,7 @@ var usersFile = "users.json";
 function myFunc() {
     console.log("Scrap page: %s", page);
 
-    var reqTemp = https.get("https://reqres.in/api/users?page=" + page, function (response) {
+    var reqTemp = https.get("https://reqres.in/api/users?page=" + page, {timeout : 60000}, function (response) {
         var body = '';
 
         response.on('data', function(data) {
@@ -30,7 +30,7 @@ function myFunc() {
                 else
                 {
                     data = JSON.parse( data );
-                    data.push(body);
+                    data.push(JSON.parse(body));
                     //write back
                     fs.writeFile(usersFile, JSON.stringify(data), function(err) {
                         if (err) {
@@ -53,12 +53,14 @@ function myFunc() {
 
         response.on('error', function (err) {
             console.error(err);
-            throw e;
         });
-    });
-    reqTemp.end();
+
+        
+    }).on('error', function(err) {
+        console.log(err)
+      }).end();
+      
     page++;
 }
 
-
-  setInterval(myFunc, 60000); //1 minute
+setInterval(myFunc, 60000); //1 minute

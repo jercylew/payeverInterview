@@ -87,6 +87,7 @@ app.get('/api/user/:userId/avatar', function (req, res) {
 app.delete('/api/user/:userId/avatar', function (req, res) {
     console.log("Delete the image file for user with id: %s", req.params.userId);
 
+    var img_file = "img_" + req.params.userId + ".data";
     if (fs.existsSync(img_file)) {
         //Read from the file
         fs.unlink(img_file, function (err) {

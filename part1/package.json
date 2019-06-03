@@ -1,0 +1,19 @@
+{
+	"name" : "part1_rest_api",
+	"version" : "1.0.0",
+	"repository": {
+		"type" : "git",
+		"url" : "https://github.com/jercylew/payeverInterview.git"
+	},
+	"description": "Part 1, rest API",
+	"main": "part1.js",
+	"scripts": {
+		"start": "node part1.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Yuming LIU",
+	"license": "ISC",
+	"dependencies": {
+		"express": "4.17.1"
+	}
+}

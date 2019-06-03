@@ -1,0 +1,18 @@
+{
+	"name" : "part2_cron_scrap",
+	"version" : "1.0.0",
+	"repository": {
+		"type" : "git",
+		"url" : "https://github.com/jercylew/payeverInterview.git"
+	},
+	"description": "Part 2, cron task scraping user pages",
+	"main": "part2.js",
+	"scripts": {
+		"start": "node part2.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Yuming LIU",
+	"license": "ISC",
+	"dependencies": {
+	}
+}
